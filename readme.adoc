@@ -27,5 +27,4 @@ displays the confirmation numbers.
 image:./images/home-page.jpg[front-end]
 
 == Security
-
-[[ TODO ]]
+login with username= user, password= password
