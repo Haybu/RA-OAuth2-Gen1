@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+eureka:
+  client:
+    register-with-eureka: false
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    flights:
+      path: /flights/**
+      serviceId: flights-service
+      stripPrefix: false
+    reservations:
+      path: /reservations/**
+      serviceId: reservations-service
+      stripPrefix: false
+    user:
+      path: /user/**
+      url: http://localhost:9999/uaa/user
+    ui:
+      path: /**
+      url: agency-frontend
+
+

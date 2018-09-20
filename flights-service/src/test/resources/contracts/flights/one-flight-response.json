@@ -1,0 +1,12 @@
+ {"id":1,
+      "nbr":"FL123",
+      "airline":"Delta",
+      "origin":"AUS",
+      "destination":"IAH",
+      "stops":0,
+      "price":340.3,
+      "capacity":120,
+      "plane":"Airbus 300",
+      "departure":"2018-05-07",
+      "arrival":"2018-07-07"
+ }

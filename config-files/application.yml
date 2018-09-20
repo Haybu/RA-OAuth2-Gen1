@@ -1,0 +1,86 @@
+server:
+  port: ${SERVER-PORT:0}
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web.base-path: /admin
+    web.exposure.include: '*'
+    web.enabled: true
+    enabled-by-default: true
+  endpoint:
+    env.enabled: true
+    auditevents.enabled: true
+    beans.enabled: true
+    conditions.enabled: true
+    configprops.enabled: true
+    health.enabled: true
+    heapdump.enabled: true
+    info.enabled: true
+    logfile.enabled: true
+    mappings.enabled: true
+    loggers.enabled: true
+    metrics.enabled: true
+  health:
+    db.enabled: true
+  cloudfoundry:
+    enabled: true
+    skip-ssl-validation: true
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: localhost
+    statusPageUrlPath: ${server.servlet.context-path}${management.endpoints.web.base-path}/info
+    healthCheckUrlPath: ${server.servlet.context-path}${management.endpoints.web.base-path}/health
+
+spring:
+  jpa:
+    generate-ddl: false
+  hibernate:
+    ddl-auto: create-drop
+    show_sql: true
+    use_sql_comments: false
+    format_sql: false
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+#    org.springframework.boot.autoconfigure: DEBUG
+
+security:
+  ignored:
+  - "*.bundle.*"
+  oauth2:
+    client:
+      clientId: acme
+      clientSecret: acmesecret
+      accessTokenUri: http://localhost:9999/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+      authorizedGrantTypes: authorization_code
+      scope: openid
+#      useCurrentUri: false
+#      preEstablishedRedirectUri: http://localhost
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
+      preferTokenInfo: false
+
+---
+spring:
+  profiles: cloud
+  cloud:
+    services:
+      registrationMethod: route
+
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]:localhost}
+
+security:
+  basic:
+    enabled: false

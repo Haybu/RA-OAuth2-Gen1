@@ -1,0 +1,38 @@
+[
+    {"id":1,
+      "nbr":"FL123",
+      "airline":"Delta",
+      "origin":"AUS",
+      "destination":"IAH",
+      "stops":0,
+      "price":340.3,
+      "capacity":120,
+      "plane":"Airbus 300",
+      "departure":"2018-05-07",
+      "arrival":"2018-07-07"
+    },
+    {"id":2,
+      "nbr":"FL754",
+      "airline":"United",
+      "origin":"AUS",
+      "destination":"IAH",
+      "stops":0,
+      "price":420.5,
+      "capacity":200,
+      "plane":"Airbus 300",
+      "departure":"2018-05-07",
+      "arrival":"2018-07-07"
+    },
+    {"id":3,
+      "nbr":"FL985",
+      "airline":"Southwest",
+      "origin":"AUS",
+      "destination":"IAH",
+      "stops":0,
+      "price":600.5,
+      "capacity":250,
+      "plane":"Airbus 300",
+      "departure":"2018-05-07",
+      "arrival":"2018-07-07"
+    }
+  ]
