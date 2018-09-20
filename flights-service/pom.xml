@@ -103,7 +103,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <testMode>EXPLICIT</testMode>
-                    <baseClassForTests>io.springframework.contracts.FlightsBaseTest</baseClassForTests>
+                    <baseClassForTests>io.agilehandy.contracts.FlightsBaseTest</baseClassForTests>
                 </configuration>
             </plugin>
 

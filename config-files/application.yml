@@ -51,7 +51,7 @@ logging:
     root: INFO
     org.springframework.web: DEBUG
     org.springframework.security: DEBUG
-#    org.springframework.boot.autoconfigure: DEBUG
+#    org.agilehandy.boot.autoconfigure: DEBUG
 
 security:
   ignored:
